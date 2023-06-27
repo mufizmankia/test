@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update_page</title>
+</head>
+<body>
+<form action="update_data" method="post">
+    {% for i in data %}
+        <table frame="box">
+
+            <h1 style="font-family: dubai ">Update</h1>
+
+            <tr>
+                <td><input type="hidden" name="eid"
+                           value={{ i['registrationId'] }}></td>
+            </tr>
+
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">FirstName</td>
+                <td><input name="new_first_name" type="text"
+                           value={{ i['firstName'] }}></td>
+            </tr>
+
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">lastName</td>
+                <td><input name="new_last_name" type="text"
+                           value={{ i['lastName'] }}>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">UserName</td>
+                <td><input name="new_user_name" type="email"
+                           value={{ i['userName'] }}></td>
+            </tr>
+
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">Address</td>
+                <td>
+                    <textarea rows="5" cols="10"
+                              name="new_address">
+                          {{ i['address'] }}</textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">Gender</td>
+                <td>
+                    {% if i["gender"] == "Male" %}
+                        <input type="radio" name="new_gender" value="Male" checked>
+                        Male
+                        <input type="radio" name="new_gender" value="Female">Female
+                    {% endif %}
+                    {% if i["gender"] == "Female" %}
+                        <input type="radio" name="new_gender" value="Male">Male
+                        <input type="radio" name="new_gender" value="Female"
+                               checked>Female
+                    {% endif %}
+                </td>
+            </tr>
+
+
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">Country</td>
+                <td>
+
+                    {% if i["country"] == "India" %}
+                        <select name="new_country">
+                            <option value="India" selected>India</option>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+
+                        </select>
+                    {% endif %}
+
+                    {% if i["country"] == "USA" %}
+                        <select name="new_country">
+                            <option value="USA" selected>USA</option>
+                            <option value="Canada">Canada</option>
+                            <option value="India">India</option>
+                        </select>
+                    {% endif %}
+
+                    {% if i["country"] == "Canada" %}
+                    <select name="new_country">
+                        <option value="Canada" selected>Canada</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+
+                    </select>
+                    {% endif %}
+
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family: 'Berlin Sans FB'">Hobbies</td>
+                <td>
+                    {% if i["hobbies"]=="" %}
+                        <input type="checkbox" name="new_hobbies" value="cricket">cricket
+                        <input type="checkbox" name="new_hobbies" value="football">football
+                        <input type="checkbox" name="new_hobbies" value="singing">singing<br>
+                    {% endif %}
+                    {% if "cricket" in i["hobbies"] %}
+                        <input type="checkbox" name="new_hobbies" value="cricket" checked>cricket
+                    {% else %}
+                        <input type="checkbox" name="new_hobbies" value="cricket">cricket
+                    {% endif %}
+                    {% if "football" in i["hobbies"] %}
+                        <input type="checkbox" name="new_hobbies" value="football" checked>football
+                    {% else %}
+                        <input type="checkbox" name="new_hobbies" value="football">football
+                    {% endif %}
+                    {% if "singing" in i["hobbies"] %}
+                        <input type="checkbox" name="new_hobbies" value="singing" checked>singing
+                    {% else %}
+                        <input type="checkbox" name="new_hobbies" value="singing">singing
+                    {% endif %}
+                </td>
+            </tr>
+
+        </table>
+
+        <br>
+        <input style="font-family: 'Berlin Sans FB';background-color: antiquewhite"
+               type="submit" value="update"></br>
+    {% endfor %}
+
+</form>
+
+
+</body>
+</html>

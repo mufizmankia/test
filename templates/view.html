@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view</title>
+    <style>
+        table ,th, td {
+            border: 1px solid black;
+            border-collaspe: collaspe;
+        }
+    </style>
+</head>
+<h1>Registration Details</h1>
+<body>
+<form action="view" method="get">
+
+    <table>
+              <tr>
+                <th>FirstName</th>
+                <th>LastName:</th>
+                <th>UserName</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Country</th>
+                <th>hobbies</th>
+                <th>action</th>
+              </tr>
+              {% for i in data %}
+              <tr>
+                 <td>{{ i['firstName'] }}</td>
+                 <td>{{ i['lastName'] }}</td>
+                 <td>{{ i['userName'] }}</td>
+                 <td>{{ i['address'] }}</td>
+                 <td>{{ i['gender'] }}</td>
+                 <td>{{ i['country'] }}</td>
+                 <td>{{ i['hobbies'] }}</td>
+
+                 <td>
+                      <a href="/delete_data?did={{i['registrationId']}}">Delete</a>
+                      <a href="/edit_data?eid={{i['registrationId']}}">Edit</a>
+                 </td>
+              </tr>
+              {% endfor  %}
+    </table>
+</form>
+</body>
+</html>

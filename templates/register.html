@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Register </title>
+</head>
+<h1>Registration Form</h1>
+<body>
+<form action="register"method="post">
+    <table frame="box">
+    <br>  <lable>First Name:</lable>
+          <input type="text" name="firstName">
+    </br>
+
+    <br>  <lable>Last Name:</lable>
+          <input type="text" name="lastName">
+    </br>
+
+    <br>      <lable>User Name:</lable>
+          <input type="email" name="userName">
+    </br>
+
+    <br>      <lable>Password:</lable>
+          <input type="password" name="password">
+    </br>
+
+    <br>     <lable>Address:</lable>
+          <textarea rows="5" cols="10" name="address"></textarea>
+    </br>
+
+    <br>      <lable>Gender:</lable>
+          <input type="radio" name="gender" value="Male">Male
+          <input type="radio" name="gender" value="Female">Female
+    </br>
+
+       <br><lable>Country:</lable>
+          <select name="country">
+          <option name="India" value="India">India</option>
+          <option name="USA" value="USA">USA</option>
+          <option name="Canada" value="Canada">Canada</option>
+          </select>
+       </br>
+
+       <br>
+           <lable>Hobbies:</lable>
+           <input type="checkbox" name="hobbies" value="cricket">cricket
+           <input type="checkbox" name="hobbies" value="football">football
+           <input type="checkbox" name="hobbies" value="singing">singing
+       </br>
+    <input type="submit">
+    <a href="/view">View</a>
+    </table>
+</form>
+</body>
+</html>
